@@ -1,15 +1,15 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import './App.css';
-import {stockOverviewPage} from './pages/stockOverviewPage';
-import {stockDetailPage} from './pages/stockDetailPage';
+import {StockOverviewPage} from './pages/stockOverviewPage';
+import {StockDetailPage} from './pages/StockDetailPage';
 
 const App = () => {
   return (
     <main className='container'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element = {<stockOverviewPage />}/>
-          <Route path='detail/:symbol' element = {<stockDetailPage />}
+          <Route path='/' element = {<StockOverviewPage />}/>
+          <Route path='detail/:symbol' element = {<StockDetailPage />}
           />
         </Routes>
       </BrowserRouter>

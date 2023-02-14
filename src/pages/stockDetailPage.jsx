@@ -1,5 +1,5 @@
-export const stockDetailPage = () =>{
+export const StockDetailPage = () =>{
     return(
-        <div><h1>StockDetail</h1></div>
+        <div>StockDetail</div>
     )
 }

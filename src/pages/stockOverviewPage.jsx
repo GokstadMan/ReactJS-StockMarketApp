@@ -2,7 +2,7 @@ import {AutoComplete} from '../components/AutoComplete';
 import {StockList} from '../components/StockList';
 
 
-export const stockOverviewPage = () =>{
+export const StockOverviewPage = () =>{
     return(
         <div>StockOverview
             <AutoComplete/>
