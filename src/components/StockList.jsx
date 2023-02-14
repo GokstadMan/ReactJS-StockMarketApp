@@ -1,4 +1,5 @@
 import {useState,useEffect} from 'react'
+import {BsFillCaretDownFill, BsFillCaretUpFill} from 'react-icons/bs'
 import finnHub from '../apis/finnHub';
 
 export const StockList = () =>{
@@ -7,6 +8,10 @@ export const StockList = () =>{
 
     const changeColor =(change) => {
         return change>0 ? "info":"danger"
+    }
+
+    const renderIcon = (change) => {
+        return change>0 ? <BsFillCaretUpFill/> : <BsFillCaretDownFill/>
     }
     
     useEffect(()=> {
@@ -63,8 +68,8 @@ export const StockList = () =>{
                         <tr className='table-row' key={stockData.symbol}>
                             <th scope='row'>{stockData.symbol}</th>
                             <td>{stockData.data.c}</td>
-                            <td className={`text-${changeColor(stockData.data.d)}`}>{stockData.data.d}</td>
-                            <td className={`text-${changeColor(stockData.data.d)}`}>{stockData.data.dp}</td>
+                            <td className={`text-${changeColor(stockData.data.d)}`}>{stockData.data.d} {renderIcon(stockData.data.d)}</td>
+                            <td className={`text-${changeColor(stockData.data.d)}`}>{stockData.data.dp} {renderIcon(stockData.data.d)}</td>
                             <td>{stockData.data.h}</td>
                             <td>{stockData.data.l}</td>
                             <td>{stockData.data.o}</td>
