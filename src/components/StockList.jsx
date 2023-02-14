@@ -44,7 +44,7 @@ export const StockList = () =>{
     },[])
 
     return <div>
-        <table className='table hover mt-5'>
+        <table className='table hover mt-5 table-striped'>
             <thead style = {{color: "rgb(79,89,102)"}}>
                 <tr>
                     <th scope='col'>Navn</th>
