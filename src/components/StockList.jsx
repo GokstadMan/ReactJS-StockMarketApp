@@ -32,7 +32,7 @@ export const StockList = () =>{
                         symbol:response.config.params.symbol
                     }
                 });
-                console.log(data);
+                
                 if(isMounted){
                     setStock(data);
                 }
