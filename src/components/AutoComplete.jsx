@@ -1,10 +1,12 @@
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useContext} from 'react';
 import finnHub from '../apis/finnHub'
+import {WatchListContext} from '../context/watchListContext'
 
 export const AutoComplete = () =>{
 
     const [search, setSearch]=useState("");
     const [results, setResults]=useState([]);
+    const{addStock} = useContext(WatchListContext)
 
     const renderDropDown = () => {
         const dropDownClass = search ? 'show' :null
@@ -17,7 +19,8 @@ export const AutoComplete = () =>{
                 }} className={`dropdown-menu ${dropDownClass}`}>
                     {results.map((result) => {
                         return(
-                            <li key={result.symbol} className='dropdown-item'>{result.description}({result.symbol})</li>
+                            <li onClick={() =>{ addStock(result.symbol)
+                                                setSearch("")}}  key={result.symbol} className='dropdown-item'>{result.description}({result.symbol})</li>
                         )
                     
                 })}
@@ -59,7 +62,7 @@ export const AutoComplete = () =>{
         <div className="w-50 p-5 rounded mx-auto">
             <div className="form-floating dropdown">
                 <input style={{backgroundColor:"rgba(145,158,171,0.04)"}} id='search' type='text'
-                className='form-control' placeholder='Søk:' autoComplete="off" value={search} 
+                className='form-control bg-info' placeholder='Søk:' autoComplete="off" value={search} 
                 onChange={(e)=> setSearch(e.target.value)}></input>
                 <label htmlFor='search'>Søk</label>
                 {renderDropDown()}

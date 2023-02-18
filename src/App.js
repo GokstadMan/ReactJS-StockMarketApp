@@ -2,17 +2,22 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import './App.css';
 import {StockOverviewPage} from './pages/stockOverviewPage';
 import {StockDetailPage} from './pages/StockDetailPage';
+import {WatchListContextProvider} from './context/watchListContext'
+
+
 
 const App = () => {
   return (
     <main className='container'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element = {<StockOverviewPage />}/>
-          <Route path='detail/:symbol' element = {<StockDetailPage />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <WatchListContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element = {<StockOverviewPage />}/>
+            <Route path='detail/:symbol' element = {<StockDetailPage />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </WatchListContextProvider>
     </main>
   )
 }
