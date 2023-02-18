@@ -5,7 +5,7 @@ export const StockChart = ({chartData,symbol}) => {
 
     const{day,week,year} = chartData
 
-    }
+    
 
     const options = {
         title:{
@@ -68,14 +68,18 @@ export const StockChart = ({chartData,symbol}) => {
     }
 
     return <div style={{backgroundColor:"beige"}} className='mt-5 p-4 shadow-sm'>
-        <Chart options={options} series={series} type="area" width ="800"/>
-        <div>
-            <button className={renderButtonSelect("24h")} onClick={() => 
-            setDateFormat("24h")}>24h</button>
-            <button className={renderButtonSelect("7d")} onClick={() => 
-            setDateFormat("7d")}>7d</button>
-            <button className={renderButtonSelect("1y")} onClick={() => 
-            setDateFormat("1y")}>1y</button>
-        </div>
-    </div>
-}
+            <Chart options={options} series={series} type="area" width ="800"/>
+                <div>
+                    <button className={renderButtonSelect("24h")} onClick={() => 
+                    setDateFormat("24h")}>24h</button>
+                    <button className={renderButtonSelect("7d")} onClick={() => 
+                    setDateFormat("7d")}>7d</button>
+                    <button className={renderButtonSelect("1y")} onClick={() => 
+                    setDateFormat("1y")}>1y</button>
+                </div>
+            </div>
+    }
+
+    
+   
+    
