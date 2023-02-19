@@ -87,7 +87,7 @@ export const StockList = () => {
                 <td>{stockData.data.h}</td>
                 <td>{stockData.data.l}</td>
                 <td>{stockData.data.o}</td>
-                <td>{stockData.data.pc}<button className="btn btn-danger btn-sm m-3 d-inline-block delete-button" onClick={
+                <td>{stockData.data.pc}<button className="btn btn-danger btn-sm mx-3 d-inline-block delete-button" onClick={
                   (e) => {e.stopPropagation()
                          deleteStock(stockData.symbol)}
                 }>Slett</button></td>
